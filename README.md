@@ -29,4 +29,4 @@ verification at the destination.
 - UC-06 Verify Destination OTP
 
 ## Author
-[Your Name] — PES University, Dept. of CSE
+[Vaibhava L] — PES University, Dept. of CSE
