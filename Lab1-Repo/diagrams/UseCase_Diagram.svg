@@ -1,0 +1,104 @@
+<svg viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect width="1000" height="650" fill="white"/>
+
+  <!-- Title -->
+  <text x="500" y="30" font-size="18" font-weight="bold" text-anchor="middle">Hyperlocal Courier Dispatch &amp; Tracking Engine — Use Case Diagram</text>
+
+  <!-- System boundary -->
+  <rect x="260" y="60" width="480" height="530" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="270" y="80" font-size="13" font-style="italic">Courier Dispatch System</text>
+
+  <!-- Actors: Sender Client (left top) -->
+  <g id="sender">
+    <circle cx="90" cy="140" r="12" fill="none" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="152" x2="90" y2="195" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="168" x2="120" y2="168" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="195" x2="65" y2="225" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="195" x2="115" y2="225" stroke="#000" stroke-width="2"/>
+    <text x="90" y="242" font-size="13" text-anchor="middle" font-weight="bold">Sender Client</text>
+  </g>
+
+  <!-- Actor: Delivery Rider (left middle) -->
+  <g id="rider">
+    <circle cx="90" cy="330" r="12" fill="none" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="342" x2="90" y2="385" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="358" x2="120" y2="358" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="385" x2="65" y2="415" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="385" x2="115" y2="415" stroke="#000" stroke-width="2"/>
+    <text x="90" y="432" font-size="13" text-anchor="middle" font-weight="bold">Delivery Rider</text>
+  </g>
+
+  <!-- Actor: Recipient (left bottom) -->
+  <g id="recipient">
+    <circle cx="90" cy="510" r="12" fill="none" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="522" x2="90" y2="565" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="538" x2="120" y2="538" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="565" x2="65" y2="595" stroke="#000" stroke-width="2"/>
+    <line x1="90" y1="565" x2="115" y2="595" stroke="#000" stroke-width="2"/>
+    <text x="90" y="612" font-size="13" text-anchor="middle" font-weight="bold">Recipient</text>
+  </g>
+
+  <!-- Use case ovals -->
+  <ellipse cx="450" cy="120" rx="120" ry="34" fill="#eaf2fb" stroke="#1f5fa8" stroke-width="1.5"/>
+  <text x="450" y="116" font-size="12.5" text-anchor="middle" font-weight="bold">UC-01</text>
+  <text x="450" y="132" font-size="12.5" text-anchor="middle">Request Courier Pickup</text>
+
+  <ellipse cx="450" cy="230" rx="120" ry="34" fill="#eaf2fb" stroke="#1f5fa8" stroke-width="1.5"/>
+  <text x="450" y="226" font-size="12.5" text-anchor="middle" font-weight="bold">UC-02</text>
+  <text x="450" y="242" font-size="12.5" text-anchor="middle">Match Nearest Rider</text>
+
+  <ellipse cx="660" cy="230" rx="115" ry="34" fill="#fdf3e3" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="660" y="226" font-size="12.5" text-anchor="middle" font-weight="bold">UC-03</text>
+  <text x="660" y="242" font-size="12.5" text-anchor="middle">Optimize Multi-Stop Route</text>
+
+  <ellipse cx="450" cy="345" rx="120" ry="34" fill="#eaf2fb" stroke="#1f5fa8" stroke-width="1.5"/>
+  <text x="450" y="341" font-size="12.5" text-anchor="middle" font-weight="bold">UC-04</text>
+  <text x="450" y="357" font-size="12.5" text-anchor="middle">Track Delivery Status</text>
+
+  <ellipse cx="450" cy="460" rx="120" ry="34" fill="#eaf2fb" stroke="#1f5fa8" stroke-width="1.5"/>
+  <text x="450" y="456" font-size="12.5" text-anchor="middle" font-weight="bold">UC-05</text>
+  <text x="450" y="472" font-size="12.5" text-anchor="middle">Complete Delivery</text>
+
+  <ellipse cx="660" cy="460" rx="115" ry="34" fill="#eaf2fb" stroke="#1f5fa8" stroke-width="1.5"/>
+  <text x="660" y="456" font-size="12.5" text-anchor="middle" font-weight="bold">UC-06</text>
+  <text x="660" y="472" font-size="12.5" text-anchor="middle">Verify Destination OTP</text>
+
+  <!-- Associations: actors to use cases -->
+  <line x1="122" y1="150" x2="330" y2="125" stroke="#555" stroke-width="1.3"/>
+  <line x1="122" y1="145" x2="331" y2="230" stroke="#555" stroke-width="1.3"/>
+  <line x1="122" y1="150" x2="330" y2="350" stroke="#555" stroke-width="1.3"/>
+
+  <line x1="122" y1="335" x2="546" y2="235" stroke="#555" stroke-width="1.3"/>
+  <line x1="122" y1="340" x2="333" y2="455" stroke="#555" stroke-width="1.3"/>
+
+  <line x1="122" y1="505" x2="547" y2="465" stroke="#555" stroke-width="1.3"/>
+
+  <!-- include relationships (dashed arrow, open head) -->
+  <defs>
+    <marker id="openArrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1f5fa8" stroke-width="1.3"/>
+    </marker>
+    <marker id="openArrowOrange" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b8860b" stroke-width="1.3"/>
+    </marker>
+  </defs>
+
+  <line x1="450" y1="154" x2="450" y2="196" stroke="#1f5fa8" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#openArrow)"/>
+  <text x="458" y="178" font-size="11" fill="#1f5fa8" font-style="italic">&#171;include&#187;</text>
+
+  <line x1="450" y1="379" x2="450" y2="426" stroke="#1f5fa8" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#openArrow)"/>
+  <text x="458" y="405" font-size="11" fill="#1f5fa8" font-style="italic">&#171;include&#187;</text>
+
+  <line x1="565" y1="460" x2="530" y2="460" stroke="#1f5fa8" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#openArrow)"/>
+  <text x="512" y="450" font-size="11" fill="#1f5fa8" font-style="italic">&#171;include&#187;</text>
+
+  <!-- extend relationship -->
+  <line x1="575" y1="230" x2="530" y2="230" stroke="#b8860b" stroke-width="1.3" stroke-dasharray="6,4" marker-end="url(#openArrowOrange)"/>
+  <text x="500" y="215" font-size="11" fill="#b8860b" font-style="italic">&#171;extend&#187;</text>
+
+  <!-- Legend -->
+  <rect x="260" y="605" width="14" height="14" fill="#eaf2fb" stroke="#1f5fa8"/>
+  <text x="280" y="617" font-size="11">Core use case</text>
+  <rect x="410" y="605" width="14" height="14" fill="#fdf3e3" stroke="#b8860b"/>
+  <text x="430" y="617" font-size="11">Optional (extend) use case</text>
+</svg>
