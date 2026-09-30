@@ -1,0 +1,60 @@
+LAB 4 SUBMISSION CONTEXT
+
+This repository was already substantially implemented and functional when the
+Lab 4 activity began. The README described Task 1 as reproducing a bug involving
+score and turn behavior after completing boxes.
+
+During investigation, normal gameplay did not reproduce the described score/turn
+bug. Box completion, scoring, extra turns, and game completion were already
+functioning correctly. We therefore did not fabricate a gameplay failure or
+deliberately break working gameplay to create a video.
+
+Instead, investigation of the board and game-state implementation identified a
+genuine robustness/API defect in Board.add_line(). Before the Task 1 fix,
+Board.add_line() did not independently reject invalid orientations such as "X"
+and could accept negative coordinates because of Python's negative-indexing
+behavior. Direct calls to the Board API could consequently mutate the wrong
+location or corrupt board state. Normal CLI gameplay normally passed through
+rules.valid_move(), so this defect was not necessarily visible during ordinary
+valid gameplay. This explains why the original score/turn bug could not honestly
+be reproduced through the normal game flow.
+
+Task 1 was adapted to fix this genuine underlying defect while preserving the
+existing modular gameplay implementation. The fix added defensive validation for
+orientation, coordinates, and repeated lines. The before video demonstrates the
+original invalid Board API behavior.
+
+Task 2 added configurable square board sizes from 2x2 through 5x5, requiring
+coordinated changes across the game, board, and rules layers.
+
+Task 3 added defense-in-depth handling so an unexpected ValueError from
+Board.add_line() cannot terminate the game or corrupt board state, scores, or
+turn state.
+
+Task 4 expanded automated testing for horizontal and vertical moves,
+repeated-line state preservation, box completion and extra turns, end-game
+behavior, and documented the testing and design decisions. The final automated
+test suite passes all 15 tests.
+
+The repository contains both the before and after videos for the lab. The
+complete Vibe Coding/ChatGPT conversation history is available through the
+submitted chat link.
+
+IMPORTANT CLARIFICATION
+
+The Task 1 adaptation was made because the assigned repository did not reproduce
+the described gameplay bug under normal operation. The solution intentionally
+avoided fabricating a bug and instead addressed a real underlying robustness
+defect discovered during investigation.
+
+HOW TO REVIEW THIS SUBMISSION
+
+1. Read LAB4_CONTEXT.txt.
+2. Watch the before video.
+3. Review the Task 1 commit/diff and observe what was actually fixed.
+4. Review the Task 2 configurable-board feature.
+5. Review Task 3 robustness handling.
+6. Review Task 4 tests and README testing notes.
+7. Watch the after video.
+8. Review the complete Chat/LLM conversation history.
+9. LLM LINK - https://chatgpt.com/c/6abca979-872c-83e8-b563-16da4c1c497d
